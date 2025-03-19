@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Searcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="header">Marketplace Searcher</h1>
+    
+    <select class="category-select" onchange="loadStores(this.value)">
+        <option value="">Выберите категорию</option>
+        <option value="electronics">Техника</option>
+        <option value="clothing">Одежда</option>
+        <option value="footwear">Обувь</option>
+        <option value="furniture">Мебель</option>
+        <option value="books">Книги</option>
+    </select>
+
+    <div class="search-section" id="searchSection" style="display: none;">
+        <div class="stores-list" id="storesList"></div>
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Введите запрос">
+            <button class="search-button" onclick="searchProducts()">Поиск</button>
+        </div>
+    </div>
+
+    <div class="products-list" id="productsList"></div>
+
+    <div class="telegram-subscription">
+        <a href="https://t.me/your_bot" target="_blank">
+            <img src="https://telegram.org/img/t_logo.png" alt="Telegram" class="telegram-logo">
+            Подписывайтесь на наш Telegram-бот для обновлений!
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
