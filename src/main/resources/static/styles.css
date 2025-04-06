@@ -9,42 +9,112 @@ body {
     line-height: 1.6;
 }
 
-/* Заголовок */
-.header {
-    text-align: center;
+/* Шапка */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 40px;
+}
+
+.header {
     font-size: 2.5rem;
     font-weight: 600;
     color: #2c3e50;
+    margin: 0;
 }
 
-/* Выбор категории */
-.category-select {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px 16px;
-    margin: 0 auto 30px;
-    display: block;
-    border: 1px solid #dfe4ea;
-    border-radius: 8px;
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
     font-size: 1rem;
-    background-color: #fff;
     cursor: pointer;
-    transition: border-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.category-select:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+.auth-button:hover {
+    background-color: #2980b9;
 }
 
-/* Секция поиска (stores + input) */
+/* Модальное окно для входа */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-content input {
+    padding: 12px;
+    border: 1px solid #dfe4ea;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.modal-content button {
+    padding: 12px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #2980b9;
+}
+
+.forgot-password {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Секция поиска */
 .search-section {
     margin-bottom: 40px;
 }
 
-/* Список магазинов */
 .stores-list {
     margin-bottom: 15px;
 }
@@ -60,7 +130,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    max-width: 600px; /* Выравнивание по ширине строки поиска */
+    max-width: 600px;
 }
 
 .stores-list a {
@@ -79,15 +149,17 @@ body {
     color: #fff;
 }
 
-/* Контейнер поиска */
 .search-container {
     display: flex;
-    gap: 12px;
-    max-width: 600px; /* Фиксированная ширина для выравнивания */
+    gap: 10px;
+    align-items: center;
+    max-width: 900px;
+    margin-bottom: 40px;
 }
 
 .search-input {
     flex-grow: 1;
+    min-width: 0;
     padding: 12px 16px;
     border: 1px solid #dfe4ea;
     border-radius: 8px;
@@ -112,6 +184,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s ease;
+    flex-shrink: 0;
 }
 
 .search-button:hover {
@@ -122,13 +195,42 @@ body {
     transform: scale(0.98);
 }
 
-/* Список товаров */
+.category-select {
+    width: 150px;
+    padding: 10px 12px;
+    border: 1px solid #dfe4ea;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.category-select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Популярно сегодня */
+.popular-section {
+    margin-bottom: 40px;
+}
+
+.popular-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 20px;
+}
+
+/* Список товаров (общий для поиска и популярного) */
 .products-list {
     display: grid;
     gap: 20px;
 }
 
-/* Карточка товара */
 .product-card {
     background-color: #fff;
     border: 1px solid #eef1f5;
@@ -185,7 +287,25 @@ body {
     text-decoration: underline;
 }
 
-/* Подписка на Telegram */
+/* Загрузка и пустой результат */
+.loading-container, .empty-result {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.loading-container img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.loading-container p, .empty-result p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* Telegram */
 .telegram-subscription {
     text-align: center;
     margin-top: 40px;

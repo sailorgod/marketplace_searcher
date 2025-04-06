@@ -17,17 +17,60 @@ spring:
     show-sql: true
 
 settings:
-   stores:
-        - store:
-          - url: https://www.dns-shop.ru
-            name: DNS
-            categories:
-              - name: Техника
-        - store:
-            - url: https://www.ozon.ru/
-              name: OZON
-              categories:
-                - name: Техника
-                - name: Одежда
-                - name: Книги
-                - name: Мебель
+    stores:
+      - store:
+        url: https://www.ozon.ru
+        name: OZON
+        categories:
+          - electronics
+          - clothing
+          - footwear
+          - furniture
+          - books
+      - store:
+        url: https://market.yandex.ru
+        name: Яндекс Маркет
+        categories:
+          - electronics
+          - clothing
+          - footwear
+          - furniture
+          - books
+      - store:
+        url: https://www.wildberries.ru/
+        name: Wildberries
+        categories:
+          - electronics
+          - clothing
+          - footwear
+          - furniture
+          - books
+      - store:
+        url: https://www.dns-shop.ru
+        name: DNS
+        categories:
+          - electronics
+          - furniture
+      - store:
+        url: https://www.mvideo.ru/
+        name: М-Видео
+        categories:
+          - electronics
+          - furniture
+      - store:
+        url: https://www.citilink.ru/
+        name: Ситилинк
+        categories:
+          - electronics
+          - furniture
+      - store:
+        url: https://www.lamoda.ru/
+        name: lamoda
+        categories:
+          - clothing
+          - footwear
+      - store:
+        url: https://www.litres.ru/
+        name: Литрес
+        categories:
+          - books

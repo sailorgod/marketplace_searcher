@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - Marketplace Searcher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header-container">
+    <h1 class="header">Marketplace Searcher</h1>
+    <div class="auth-buttons">
+        <button class="auth-button" onclick="window.location.href='index.html'">Войти</button>
+    </div>
+</header>
+
+<div class="register-container">
+    <h2>Регистрация</h2>
+    <form id="registerForm">
+        <input type="tel" id="registerPhone" placeholder="Номер телефона" required>
+        <input type="text" id="registerUsername" placeholder="Логин (не обязательно)">
+        <input type="password" id="registerPassword" placeholder="Пароль" required>
+        <input type="password" id="registerConfirmPassword" placeholder="Подтвердите пароль" required>
+        <div class="error-message" id="registerError" style="display: none;"></div>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>

@@ -7,34 +7,61 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header class="header-container">
     <h1 class="header">Marketplace Searcher</h1>
-    
-    <select class="category-select" onchange="loadStores(this.value)">
-        <option value="">Выберите категорию</option>
-        <option value="electronics">Техника</option>
-        <option value="clothing">Одежда</option>
-        <option value="footwear">Обувь</option>
-        <option value="furniture">Мебель</option>
-        <option value="books">Книги</option>
-    </select>
-
-    <div class="search-section" id="searchSection" style="display: none;">
-        <div class="stores-list" id="storesList"></div>
-        <div class="search-container">
-            <input type="text" class="search-input" id="searchInput" placeholder="Введите запрос">
-            <button class="search-button" onclick="searchProducts()">Поиск</button>
-        </div>
+    <div class="auth-buttons">
+        <button class="auth-button" onclick="showLoginForm()">Войти</button>
+        <button class="auth-button" onclick="window.location.href='register.html'">Зарегистрироваться</button>
     </div>
+</header>
 
-    <div class="products-list" id="productsList"></div>
-
-    <div class="telegram-subscription">
-        <a href="https://t.me/your_bot" target="_blank">
-            <img src="https://telegram.org/img/t_logo.png" alt="Telegram" class="telegram-logo">
-            Подписывайтесь на наш Telegram-бот для обновлений!
-        </a>
+<div class="modal" id="loginModal" style="display: none;">
+    <div class="modal-content">
+        <h2>Вход</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Логин" required>
+            <input type="password" id="loginPassword" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+            <a href="#" class="forgot-password">Забыл пароль?</a>
+        </form>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<div class="search-section">
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" placeholder="Введите запрос">
+        <button class="search-button" onclick="searchProducts()">Поиск</button>
+        <select class="category-select" onchange="loadStores(this.value)">
+            <option value="all">Все категории</option>
+            <option value="electronics">Техника</option>
+            <option value="clothing">Одежда</option>
+            <option value="footwear">Обувь</option>
+            <option value="furniture">Мебель</option>
+            <option value="books">Книги</option>
+        </select>
+    </div>
+    <div class="stores-list" id="storesList">
+        <h3>Поиск будет осуществляться по всем категориям:</h3>
+        <div id="storesLinks"></div>
+    </div>
+</div>
+
+<div class="popular-section" id="popularSection">
+    <h2>Популярно сегодня</h2>
+    <div class="products-list" id="popularList"></div>
+</div>
+
+<div class="products-list" id="productsList">
+    <h2>Результаты поиска:</h2>>
+</div>
+
+<div class="telegram-subscription">
+    <a href="https://t.me/your_bot" target="_blank">
+        <img src="https://telegram.org/img/t_logo.png" alt="Telegram" class="telegram-logo">
+        Подписывайтесь на наш Telegram-бот для обновлений!
+    </a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
