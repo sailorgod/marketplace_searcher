@@ -23,28 +23,19 @@ settings:
         name: OZON
         categories:
           - electronics
-          - clothing
-          - footwear
           - furniture
-          - books
       - store:
         url: https://market.yandex.ru
         name: Яндекс Маркет
         categories:
           - electronics
-          - clothing
-          - footwear
           - furniture
-          - books
       - store:
         url: https://www.wildberries.ru/
         name: Wildberries
         categories:
           - electronics
-          - clothing
-          - footwear
           - furniture
-          - books
       - store:
         url: https://www.dns-shop.ru
         name: DNS
@@ -62,15 +53,3 @@ settings:
         name: Ситилинк
         categories:
           - electronics
-          - furniture
-      - store:
-        url: https://www.lamoda.ru/
-        name: lamoda
-        categories:
-          - clothing
-          - footwear
-      - store:
-        url: https://www.litres.ru/
-        name: Литрес
-        categories:
-          - books

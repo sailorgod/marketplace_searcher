@@ -31,13 +31,14 @@
     <div class="search-container">
         <input type="text" class="search-input" id="searchInput" placeholder="Введите запрос">
         <button class="search-button" onclick="searchProducts()">Поиск</button>
+<!--        TODO Доработать категории -->
         <select class="category-select" onchange="loadStores(this.value)">
             <option value="all">Все категории</option>
-            <option value="electronics">Техника</option>
-            <option value="clothing">Одежда</option>
-            <option value="footwear">Обувь</option>
-            <option value="furniture">Мебель</option>
-            <option value="books">Книги</option>
+            <option value="smartphone">Смартфоны</option>
+            <option value="tablets">Планшеты</option>
+            <option value="laptops">Ноутбуки</option>
+            <option value="desktops">ПК</option>
+            <option value="televisions">Телевизоры</option>
         </select>
     </div>
     <div class="stores-list" id="storesList">
